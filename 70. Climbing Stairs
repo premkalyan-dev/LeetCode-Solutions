@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int climbStairs(int n) {
+        if (n <= 2) return n;
+        int totalstair = 0; 
+        int stair1 = 1;     
+        int stair2 = 2;     
+        for (int i = 2; i < n; ++i) { 
+            totalstair = stair1 + stair2; 
+            stair1 = stair2;             
+            stair2 = totalstair;         
+        }
+        return totalstair;
+    }
+};
